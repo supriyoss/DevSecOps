@@ -1,0 +1,23 @@
+---
+vcenter_hostname: "vmware.example.com"
+vcenter_datacenter: "vmwaredatacenter"
+vcenter_validate_certs: false
+vcenter_username: "username@vsphere.local"
+vcenter_password: "MySecretPassword123"
+cluster_name: "production"
+vm_name: "myvm"
+vm_guestid: "centos64Guest"
+vm_disk_gb: 10
+vm_disk_type: "thin"
+vm_disk_datastore: "datastore"
+vm_hw_ram_mb: 1024
+vm_hw_cpu_n: 1
+vm_hw_scsi: "paravirtual"
+vm_net_name: "VM Network"
+vm_net_type: "vmxnet3"
+vm_folder: "myvm"
+vm_state: "poweredoff"
+vm_net_ip: 10.0.0.1
+vm_net_netmask: 255.255.255.0
+vm_mac: "00:50:56:a5:fb:57"
+vm_net_gw: 10.0.0.254
