@@ -1,0 +1,6 @@
+demo.example.com ansible_host=192.168.10.33
+
+[all:vars]
+ansible_connection=ssh
+ansible_user=devops
+ansible_ssh_private_key_file=/home/devops/.ssh/id_rsa

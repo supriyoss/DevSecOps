@@ -1,0 +1,20 @@
+---
+- name: Download a file using a HTTPS proxy via environment variables
+  hosts: localhost
+  become: false
+  gather_facts: false
+  vars:
+    myurl: "https://releases.ansible.com/ansible/ansible-2.9.25.tar.gz"
+    mycrc: "sha256:https://releases.ansible.com/ansible/ansible-2.9.25.tar.gz.sha"
+    mydest: "/home/osboxes/ansible.tar.gz"
+  tasks:
+    - name: download file with proxy
+      ansible.builtin.get_url:
+        url: "{{ myurl }}"
+        dest: "{{ mydest }}"
+        checksum: "{{ mycrc }}"
+        mode: '0644'
+        owner: osboxes
+        group: wheel
+      environment:
+        https_proxy: "http://proxy.example.com:3128"

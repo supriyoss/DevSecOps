@@ -1,6 +1,6 @@
 ---
 - name: service module demo
-  hosts: all
+  hosts: localhost
   become: true
   tasks:
     - name: sshd restart

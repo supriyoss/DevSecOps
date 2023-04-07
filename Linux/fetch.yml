@@ -1,6 +1,6 @@
 ---
 - name: fetch module demo
-  hosts: all
+  hosts: localhost
   become: true
   vars:
     log_file: "/var/log/messages"

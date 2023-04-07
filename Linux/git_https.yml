@@ -1,6 +1,6 @@
 ---
 - name: git module demo
-  hosts: all
+  hosts: localhost
   tasks:
     - name: ensure git pkg installed
       ansible.builtin.yum:

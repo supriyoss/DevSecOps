@@ -1,6 +1,6 @@
 ---
 - name: copy module demo
-  hosts: all
+  hosts: localhost
   become: false
   tasks:
     - name: copy report.txt

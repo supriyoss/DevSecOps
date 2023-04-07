@@ -1,6 +1,6 @@
 ---
 - name: ping module demo
-  hosts: all
+  hosts: localhost
   become: false
 
   tasks:

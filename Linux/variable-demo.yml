@@ -1,6 +1,6 @@
 ---
 - name: extra variable demo
-  hosts: all
+  hosts: localhost
   vars:
     fruit: "banana"
   task:

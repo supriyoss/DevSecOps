@@ -1,6 +1,6 @@
 ---
 - name: blockinfile module demo
-  hosts: all
+  hosts: localhost
   become: true
   tasks:
 

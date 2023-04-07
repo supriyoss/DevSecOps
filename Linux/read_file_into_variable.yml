@@ -1,0 +1,9 @@
+---
+- name: read file on host
+  hosts: localhost
+  vars:
+    contents: "{{ lookup('file', '/proc/cpuinfo') }}"
+  tasks:
+    - name: print file
+      ansible.builtin.debug:
+        msg:  The content of the file is {{ contents }}

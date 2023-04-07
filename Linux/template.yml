@@ -1,6 +1,6 @@
 ---
 - name: template module demo
-  hosts: all
+  hosts: localhost
   become: true
   vars:
     page_title: "Placeholder"
