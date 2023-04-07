@@ -1,0 +1,20 @@
+--- 
+- name: Find module demo
+  hosts: all
+  vars:
+    mypath: "/home/devops/example"
+    mypattern: '*.cnf'
+  tasks:
+    - name: search files
+      ansible.builtin.find:
+        paths: "{{ mypath }}"
+        hidden: true
+        recurse: true
+        file_type: any
+        patterns: "{{ mypattern }}"
+      register: found_files
+    
+    - name: print files
+      ansible.builtin.debug:
+        var: found_files
+        

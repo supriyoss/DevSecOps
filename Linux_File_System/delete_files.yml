@@ -1,0 +1,20 @@
+---
+- name: Delete only files in a sdirectory
+  hosts: localhost
+  become: false
+  vars:
+    mypath: "/home/devops/example"
+  tasks:
+    - name: collect files
+      ansible.builtin.find:
+        paths: "{{ mypath }}"
+        hidden: true
+        recurse: true
+        file_type: any
+      register: collected_files
+
+    - name: remove collected files
+      ansible.builtin.file:
+        path: "{{ item.path }}"
+        state: absent
+      with_items: "{{ collected_files }}"
