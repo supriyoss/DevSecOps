@@ -1,0 +1,19 @@
+---
+- name: Submit a GET request to a REST API endpoint
+  hosts: localhost
+  become: false
+  vars:
+    server: "https://jsonplaceholder.typicode.com"
+    endpoint: "/todos/1"
+  tasks:
+    - name: list users
+      ansible.builtin.uri:
+        url: "{{ server }}{{ endpoint }}"
+        method: GET
+        status_code: 200
+        timeout: 30
+      register: result
+  
+    - name: debug
+      ansible.builtin.debug:
+        var: result.json.data
