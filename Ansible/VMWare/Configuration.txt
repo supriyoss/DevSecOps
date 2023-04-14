@@ -1,0 +1,6 @@
+- Configure Ansible for VMWare
+
+    - Install pyVmomi
+    - Install community.vmware
+    - Inventory & Playbook
+    

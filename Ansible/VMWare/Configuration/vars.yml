@@ -1,0 +1,6 @@
+vcenter_hostname: "vmware.example.com"
+vcenter_datacenter: "vmwaredatacenter"
+vcenter_validate_certs: false
+vcenter_username: "username@vpshere.local"
+vcenter_password: "MyS3crEtPa$$w0rd@123"
+vm_name: "myvm"
