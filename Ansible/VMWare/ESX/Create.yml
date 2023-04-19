@@ -1,0 +1,16 @@
+---
+- name: Create an ESX Cluster
+  hosts: localhost
+  become: false
+  gather_facts: false
+  collections:
+    - community.vmware
+  tasks:
+    - name: Create Cluster
+      community.vmware.vmware_cluster:
+        hostname: '{{ vcenter_hostname }}'
+        username: '{{ vcenter_username }}'
+        password: '{{ vcenter_password }}'
+        datacenter_name: datacenter
+        cluster_name: cluster
+      delegate_to: localhost

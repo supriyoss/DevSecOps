@@ -5,5 +5,3 @@ vcenter_validate_certs: false
 vcenter_username: "username@vsphere.local"
 vcenter_password: "MySecretPassword123"
 vm_name: "myvm"
-vm_template: "mytemplate"
-vm_folder: "myvm"

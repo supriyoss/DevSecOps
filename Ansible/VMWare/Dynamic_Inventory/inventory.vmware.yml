@@ -1,0 +1,9 @@
+plugin: vmware_vm_inventory
+strict: False
+hostname: vmware.example.com
+username: username@vsphere.local
+password: MySecretPassword123
+validate_certs: False
+with_tags: False
+groups:
+  VMs: True

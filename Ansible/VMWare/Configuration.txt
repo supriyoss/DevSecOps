@@ -2,5 +2,16 @@
 
     - Install pyVmomi
     - Install community.vmware
+    - Python virtual Environment
+    - Inside python venv execute - pip3 install --upgrade git+https://github.com/vmware/vsphere-automation-sdk-python.git
     - Inventory & Playbook
     
+Configure Dynamic Inventory for Ansible from VMWare vsphere
+
+    - community.vmware.vmware_vm_inventory
+    - pyVmomi
+    - requests
+    - vSphere automation sdk
+
+Check collections with - 
+    ansible-galaxy collection list
