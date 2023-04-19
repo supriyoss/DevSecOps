@@ -7,12 +7,15 @@
     - community.vmware
   pre_tasks:
     - include_vars: vars.yml
+  vars:
+    username: "test_user"
+    password: "test_pass"
   tasks:
     - name: get VM info
       vmware_guest_info:
         hostname: "{{ vcenter_hostname }}"
-        username: "{{ vcenter_username }}"
-        password: "{{ vcenter_password }}"
+        username: "{{ username }}"
+        password: "{{ password }}"
         datacenter: "{{ vcenter_datacenter }}"
         validate_certs: "{{ vcenter_validate_certs }}"
         name: "{{ vm_name }}"
