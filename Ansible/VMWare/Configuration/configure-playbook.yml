@@ -5,9 +5,14 @@
   gather_facts: false
   collections:
     - community.vmware
-  vars:
-    username: "test_user"
-    password: "test_pass"
+  vars_prompt:
+    - name: username
+      prompt: username
+      private: false
+    
+    - name: password
+      prompt: password
+
   tasks:
     - name: get VM info
       vmware_guest_info:
