@@ -1,0 +1,16 @@
+---
+- name: extra variable demo
+  hosts: all
+  vars:
+    fruit: "banana"
+  task:
+    - name: print message
+      ansible.builtin.debug:
+        msg: "fruit is {{ fruit }}"
+
+
+# --extra-vars="fruit=apple"
+# --extra-vars='{"fruit":"apple"}'
+# --extra-vars="@file.json"
+# --extra-vars="@file.yml"
+
