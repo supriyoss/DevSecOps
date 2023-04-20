@@ -1,0 +1,112 @@
+# How to run
+#
+#
+# ansible-playbook -i environments/hosts_connections6_production -u <USERNAME> -k playbooks/ibm-connections6.yml
+[dmgr]
+srv000.company.com
+
+[was_servers]
+srv001.company.com
+srv002.company.com
+srv003.company.com
+srv004.company.com
+
+[ihs_servers]
+srv010.company.com
+srv011.company.com
+
+[connections6-pink]
+srv005.company.com
+srv006.company.com
+srv007.company.com
+
+[forms-servers]
+srv003.company.com
+
+[docs-conversion-servers]
+srv004.company.com
+
+[docs-viewer-servers]
+srv004.company.com
+
+[all:vars]
+iim_repository_url=http://192.168.1.150/installation
+was_repository_url=http://192.168.1.150/was/8.5.5
+was_fixes_repository_url=http://192.168.1.150/was/8.5.5/FP15
+ihs_repository_url=http://192.168.1.150/was/8.5.5
+ihs_fixes_repository_url=http://192.168.1.150/was/8.5.5/FP15
+jdbc_repository_url=http://192.168.1.150/db2/jdbc/V11.1/
+cnx_repository_url=http://192.168.1.150/connections/6.0
+cnx_fixes_repository_url=https://192.168.1.150/connections/6.0/CR5
+cnx_fixes_version=CR5
+#
+was_username=wsadmin
+was_password=<CHANGE_PASSWORD>
+#
+dmgr_hostname=srv000.company.com
+ihs_password=<CHANGE_PASSWORD>
+cnx_domainname=.company.com
+cnx_fqdn=connections.company.com
+smtp_hostname=smtp.company.com
+#
+#
+cnx_deploy_type=large
+cnx_node_list=['srv001','srv002']
+cnx_hostname_list=['srv001.company.com','srv002.company.com']
+#activities_app={ 'cluster_name': 'clActivities', 'nodes':['srv001','srv002']}
+#blogs_app={}
+#dogear_app={}
+#communities_app={}
+#files_app={}
+#forums_app={}
+#homepage_app={}
+#metrics_app={}
+#mobile_app={}
+#moderation_app={}
+#news_app={}
+#profiles_app={}
+#search_app={}
+#wikis_app={}
+#rte_app={}
+#common_app={}
+#widgets_app={}
+#push_app={}
+#
+db_username=LCUSER
+db_password=<CHANGE_PASSWORD>
+db_hostname=dbsrv.company.com
+db_port=50000
+db_jdbc_file=/opt/IBM/db2/V11.1/java
+db_type=DB2
+#
+#activities_db={ 'name': 'OPNACT', server: 'dbsrv.company.com', 'port': '50000', 'jdbc_file': '/opt/IBM/db2/V11.1/java', 'type': 'DB2', 'user': 'LCUSER', 'pw': 'password' }
+activities_db={ 'server': 'db2srv1-opnact.company.com' }
+blogs_db={ 'server': 'db2srv1-blogs.company.com' }
+dogear_db={ 'server': 'db2srv1-dogear.company.com' }
+communities_db={ 'server': 'db2srv1-sncomm.company.com' }
+files_db={ 'server': 'db2srv1-files.company.com' }
+forums_db={ 'server': 'db2srv1-forums.company.com' }
+homepage_db={ 'server': 'db2srv1-homepage.company.com' }
+metrics_db={ 'server': 'db2srv1-metrics.company.com' }
+mobile_db={ 'server': 'db2srv1-mobile.company.com' }
+profiles_db={ 'server': 'db2srv1-peopledb.company.com' }
+push_db={ 'server': 'db2srv1-people.company.com' }
+wikis_db={ 'server': 'db2srv1-wikis.company.com' }
+icec_db={ 'server': 'db2srv1-xcc.company.com' }
+#
+#ccm_install=true
+#ccm_app={ 'name':'ccm', 'cluster_name': 'clCcm', 'nodes': ['dxl1scb00151','dxl1scb00152'] }
+#ccm_fgncd_db={}
+#ccm_fnos_db={}
+
+[dmgr:vars]
+ldap_server=ldapserver.company.com
+ldap_alias=ldapserver
+ldap_repo=LDAP_PRODUCTION
+ldap_bind_user=uid=ldapusr,ou=users,o=company
+ldap_bind_pass=<CHANGE_PASSWORD>
+ldap_realm=ou=users,o=company
+
+[ihs_servers:vars]
+ihs_username=ihsadmin
+ihs_password=<CHANGE_PASSWORD>
